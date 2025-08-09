@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Selamat Ulang Tahun!</title>
+  <style>
+    body { text-align: center; background-color: pink; font-family: sans-serif; }
+    h1 { font-size: 50px; color: white; text-shadow: 2px 2px 5px red; }
+  </style>
+</head>
+<body>
+  <h1>🎉 Selamat Ulang Tahun 🎉</h1>
+  <h2>Semoga panjang umur dan bahagia selalu!</h2>
+</body>
+</html>
