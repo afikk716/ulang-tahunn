@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Ulang Tahun!</title>
+  <style>
+    body {
+      background-color: #ffe6f2;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-size: 40px;
+      color: #ff3399;
+      margin-top: 20px;
+      text-shadow: 2px 2px 5px #ff99cc;
+    }
+    p {
+      font-size: 20px;
+      color: #333;
+    }
+    img {
+      border-radius: 20px;
+      margin-top: 20px;
+      max-width: 300px;
+      border: 5px solid #ff99cc;
+      box-shadow: 0 0 20px #ff66b2;
+    }
+    /* Balon */
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      animation: floatUp 10s infinite ease-in;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-120vh); }
+    }
+    /* Kembang api */
+    .firework {
+      position: absolute;
+      width: 5px;
+      height: 80px;
+      border-radius: 50%;
+      animation: explode 1.5s infinite;
+    }
+    @keyframes explode {
+      0% { transform: scale(0); opacity: 1; }
+      100% { transform: scale(3); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Selamat Ulang Tahun 🎉</h1>
+  <img src="https://i.imgur.com/your-photo.jpg" alt="Foto Ulang Tahun">
+  <p>Semoga panjang umur, sehat selalu, dan semua impianmu tercapai 💖</p>
+
+  <!-- Musik ulang tahun -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Balon
+    function createBalloon() {
+      const balloon = document.createElement("img");
+      balloon.src = "https://cdn-icons-png.flaticon.com/512/616/616630.png";
+      balloon.className = "balloon";
+      balloon.style.left = Math.random() * window.innerWidth + "px";
+      balloon.style.width = "50px";
+      document.body.appendChild(balloon);
+      setTimeout(() => balloon.remove(), 10000);
+    }
+    setInterval(createBalloon, 500);
+
+    // Kembang api
+    function createFirework() {
+      const firework = document.createElement("div");
+      firework.className = "firework";
+      firework.style.left = Math.random() * window.innerWidth + "px";
+      firework.style.top = Math.random() * window.innerHeight + "px";
+      firework.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      document.body.appendChild(firework);
+      setTimeout(() => firework.remove(), 1500);
+    }
+    setInterval(createFirework, 500);
+  </script>
+</body>
+</html>
